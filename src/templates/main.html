@@ -25,36 +25,19 @@
 
     <!--Searchbox-->
     <div class="search-box">
-        <input type="text" placeholder="Type something...">
+        <form action = "http://localhost:5000/result" method = "POST">
+            <input type="text" placeholder="Type something...">
+            <input type = "submit" value = "Search" />
+            <br>
+            <br>
+            <br>
+        </form>
+        
     </div>
 
     <!--Content-->
-    <div class="content-wrapper">
-        <div class="result-object">
-            <h2>Title of Number 1 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
-        <div class="result-object">
-            <h2>Title of Number 2 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
-        <div class="result-object">
-            <h2>Title of Number 3 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
-        <div class="result-object">
-            <h2>Title of Number 4 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
-        <div class="result-object">
-            <h2>Title of Number 5 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
+    <div class="content-wrapper" align="center">
+        <img class="upload-image" src="../static/Search(1).png">
     </div>
 
 </body>
