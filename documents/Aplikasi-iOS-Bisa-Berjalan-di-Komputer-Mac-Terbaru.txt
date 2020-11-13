@@ -1,0 +1,14 @@
+Aplikasi iOS Bisa Berjalan di Komputer Mac Terbaru
+
+KOMPAS.com -  Apple resmi meluncurkan tiga perangkat Mac terbarunya yang ditenagai chip M1 berbasis ARM yakni MacBook Air, MacBook Pro 13 inci, dan  Mac Mini. Dalam acara yang sama, Apple juga memastikan tanggal rilis sistem operasi MacOS Big Sur. 
+Sistem operasi tersebut bisa mulai diunduh pengguna perangkat Mac mulai 12 November atau esok hari. Apple mengatakan, sistem operasi Big Sur dalam perangkat Mac terbarunya, akan mendukung universal app. Artinya, aplikasi iPhone dan iPad bisa dijalankan melalui perangkat Mac. 
+Dalam acara peluncuran tersebut, Apple pun memamerkan kemampuan baru ini melalui cuplikan video. Video tersebut menampilkan aplikasi iPhone dan iPad seperti HBO Max dan Among Us, dapat berjalan di ketiga perangkat Mac terbarunya.
+Aplikasi tersebut dihadirkan di Mac App Store bersama dengan jajaran aplikasi macOS lainnya.
+Apple menjelaskan, teknologi baru yang disebut Rosetta 2 membantu chip M1 yang menjadi otak dari perangkat Mac terbaru untuk menjalankan aplikasi yang dibuat untuk Mac berbasis Intel.
+Apple bahkan mengatakan bahwa beberapa aplikasi berjalan lebih baik ketika menggunakan Rosetta 2 daripada yang mereka lakukan di Intel.
+Beberapa aplikasi yang belum tersedia di Mac App Store di antaranya yaitu Google Maps, Google Drive, Gmail, Facebook, Instagram, WhatsApp, Messenger, Snapchat, Amazon Prime Video, dan Disney Plus.
+Apple diketahui akan menambah dukungan aplikasi lainnya dan tengah mendiskusikan rencana tersebut oleh beberapa pengembang termasuk Panic, Cinema 4D, Baldur's Gate 3, Hopscotch, mmhmm, Shapr3D, dan lainnya.
+Dalam kesempatan yang sama, Apple juga berbicara soal aplikasi universal yakni aplikasi yang dibuat khusus untuk Mac dengan chip M1 dan perangkat berbasis Intel.
+Aplikasi universal itu merupakan besutan dari dua perusahaan pengembangan software yakni Omni Group dan Adobe.
+Nantinya, Adobe akan menawarkan versi universal untuk aplikasi Lightroom pada Desember 2020 dan Photoshop di awal 2021 mendatang.
+Sebagaimana dihimpun KompasTekno dari Tech Crunch, Rabu (11/11/2020), aplikasi universal ini dapat diunduh melalui toko App Store baik di smartphone maupun di web.

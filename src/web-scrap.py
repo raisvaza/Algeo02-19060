@@ -20,7 +20,7 @@ nama_file = nama_file.replace("?","") + ".txt"
 # Ekstraksi konten artikel dan pembersihan konten dari iklan dan foto
 konten = soup.find(True, "read__content")
 
-konten_bersih = konten.find_all(["p","h2","h3","ol","ul"])
+konten_bersih = konten.find_all(["p","h2","h3","ol","ul","table"])
 for paragraf in konten_bersih:
     if paragraf.find(class_=["inner-link-baca-juga","photo"]):
         paragraf.decompose()
@@ -35,6 +35,6 @@ for paragraf in konten_bersih:
 artikel = judul + "\n\n" + temp
 
 # Penyimpanan artikel sebagai dokumen
-f = open(nama_file, "w+")
+f = open("./documents/" + nama_file, "w+")
 f.write(artikel)
 f.close
