@@ -1,0 +1,43 @@
+<html>
+
+<head>
+
+    <title>
+        Simple Search Engine: Upload
+    </title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!--Title-->
+    <div class="title-bar">
+        <h1 align="center">Simple Search Engine</h1>
+    </div>
+    
+    <!--Navbar-->
+    <div class="navigation-bar">
+        <a href="about.html"><button>About</button></a>
+        <a href="upload.html"><button>Upload</button></a>
+        <a href="main.html"><button>Search</button></a>
+    </div>
+
+    <!--Searchbox-->
+    <div class="search-box">
+        <h2 style="margin-top: 30px">Upload Documents</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <!--Content-->
+    <div class="content-wrapper" style="text-align: center;">
+        <img class="upload-image" src="Images/Upload (1).png">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="fileToUpload" id="fileUpload">
+            <input type="submit" value="Upload File" name="submit">
+        </form>
+    </div>
+
+</body>
+
+</html>

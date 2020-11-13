@@ -1,0 +1,232 @@
+/* Palette
+    - cadet-blue: #5c9eadff;
+    - isabelline: #f2efeaff;
+    - oxford-blue: #030027ff;
+    - blue-sapphire: #326273ff;
+    - red-violet-color-wheel: #902d41ff;
+    - terra-cotta: #e26d5cff;
+*/
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("Fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Cabin";
+    src: url("Fonts/Cabin-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Carrington";
+    src: url("Fonts/Carrington.ttf");
+}
+
+@font-face {
+    font-family: "Tahu";
+    src: url("Fonts/Tahu!.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #F2EFEA;
+    width: 100%;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-family: "Tahu";
+    font-size: 40px;
+    font-weight: lighter;
+    margin: 0;
+}
+
+h2 {
+    color: #326273;
+    font-family: "Cabin";
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+h3 {
+    color: #030027;
+    font-family: "Montserrat";
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #030027;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+.title-bar {
+    background-color: #5C9EAD;
+    width: 100%;
+    padding: 25px 0;
+}
+
+.navigation-bar {
+    background-color: #E26D5C;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+}
+
+.content-wrapper {
+    width: 90%;
+    height: 300px;
+    max-width: 700px;
+    overflow: auto;
+    margin: auto;
+}
+
+/* Hide scrollbars */
+
+.content-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.content-wrapper {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Upload Button Webkit */
+
+input[type=file]::-webkit-file-upload-button {
+    color: #FFFFFF;
+    font-family: "Cabin";
+    font-size: 16px;
+    background-color: #E26D5C;
+    margin: 5px;
+    margin-right: 20px;
+    width: 120px;
+    height: 40px;
+    border: 0px;
+}
+  
+input[type=file]::file-selector-button {
+    color: #FFFFFF;
+    font-family: "Cabin";
+    font-size: 16px;
+    background-color: #E26D5C;
+    margin: 5px;
+    margin-right: 20px;
+    width: 120px;
+    height: 40px;
+    border: 0px;
+}
+  
+input[type=file]::-webkit-file-upload-button:hover {
+    color: #902D41;
+    font-weight: bolder;
+    background-color: #F2EFEA;
+    border: 2px solid #902D41;
+}
+   
+input[type=file]::file-selector-button:hover {
+    color: #902D41;
+    font-weight: bolder;
+    background-color: #F2EFEA;
+    border: 2px solid #902D41;
+}
+
+/* Cont'd */
+
+.content-wrapper input[type=submit] {
+    color: #FFFFFF;
+    font-family: "Cabin";
+    font-size: 16px;
+    background-color: #E26D5C;
+    width: 32%;
+    min-width: 90px;
+    max-width: 232px;
+    margin: 20px;
+    height: 40px;
+    border: 0px;
+}
+
+.content-wrapper input:hover[type=submit] {
+    color: #902D41;
+    font-weight: bolder;
+    background-color: #F2EFEA;
+    border: 2px solid #902D41;
+}
+
+.search-box {
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+}
+
+.search-box input[type=text] {
+    float: center;
+    padding: 8px;
+    border: none;
+    width: 100%;
+    margin: 25px 0px;
+    font-size: 14px;
+    font-family: "Montserrat";
+}
+
+.result-object {
+    text-align: left;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+button {
+    color: #FFFFFF;
+    font-family: "Cabin";
+    font-size: 16px;
+    background-color: #E26D5C;
+    width: 32%;
+    min-width: 90px;
+    max-width: 232px;
+    height: 40px;
+    border: 0px;
+}
+
+button:hover {
+    color: #902D41;
+    font-family: "Cabin";
+    font-size: 16px;
+    font-weight: bolder;
+    background-color:#F2EFEA;
+    width: 32%;
+    min-width: 90px;
+    max-width: 232px;
+    height: 40px;
+    border: 0px;
+}
+
+.profile {
+    width: 200px;
+    height: 270px;
+    margin: 15px;
+    text-align: center;
+    display: inline-block;
+}
+
+.profile-pics {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: #902D41;
+    border-width: 5px;
+}
+
+.upload-image {
+    height: 250px;
+    margin: -20px;
+}
