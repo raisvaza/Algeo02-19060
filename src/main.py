@@ -5,7 +5,7 @@ import math
 isi tabel sebagai referensi:
 
 Term    0,0     Query 0,1   D1 0,2  D2 0,3  ...     DSekian
-Term1   1,0     1,1         1,2     1,3     ...     
+Term1   1,0     1,1         1,2     1,3     ...
 Term2   2,0     2,1         2,2     2,3     ...
 ...     ...     ...         ...     ...     ...
 TermN   N,0     N,1         N,2     N,3     ...
@@ -13,11 +13,11 @@ SIM     N+1,0   N+1,1       N+1,2   N+1,3   ...
 
 """
 
-def tabel_similarity():
-    # testing
-    banyak_dokumen = 2
-    banyak_term = 3
+# testing
+banyak_dokumen = 2
+banyak_term = 3
 
+def tabel_similarity():
     # deklarasi
     tabel = [[0 for j in range (banyak_dokumen + 2)] for i in range (banyak_term + 2)]
 
@@ -31,7 +31,7 @@ def tabel_similarity():
 
     # memasukkan frekuensi kemunculan term di setiap dokumen ke tabel
 
-    # testing
+    # semacam placeholder
     tabel[1] = ['Menteri',0,2,3]
     tabel[2] = ['minta',0,3,7]
     tabel[3] = ['Korupsi',2,5,1]
