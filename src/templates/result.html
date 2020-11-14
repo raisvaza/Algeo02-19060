@@ -63,13 +63,14 @@
     <!--Table-->
     <div class="content-wrapper">
         <table>
-            {% for row in data %}
+            {% for row in result %}
                 <tr>
-                    <td>{{row[0]}}</td>
-                    <td>{{row[1]}}</td>
+                {% for elem in row %}
+                    <td> {{ elem }} </td>
+                {% endfor %}
                 </tr>
             {% endfor %}
-        </table>
+         </table>
     </div>
     
 </body>

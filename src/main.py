@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 # deklarasi
 term_terpakai = 0
+banyak_dokumen = 2
 
 # fungsi biasa (stem, remove, similarity)
 def stem(artikel):
@@ -56,7 +57,7 @@ def tabel_similarity(query):
          term_terpakai += 1
 
    # memasukkan frekuensi kemunculan term di setiap dokumen ke tabel
-
+   
 
    # pengisian baris terakhir (baris sim)
    for j in range (banyak_dokumen + 2):
@@ -78,7 +79,11 @@ def tabel_similarity(query):
          # panjang vektor D, bagian bawah rumus sim
          magD += (tabel[i][j]) ** 2
       magD = math.sqrt(magD)
-      tabel[banyak_term + 1][j] = sim / (magQ * magD)
+      if (magD != 0 and magQ != 0):
+         tabel[banyak_term + 1][j] = sim / (magQ * magD)
+      else:
+         tabel[banyak_term + 1][j] = 0
+
    return tabel
 
 # return tabel yang tinggal ditampilkan, input array of array
@@ -110,7 +115,7 @@ def about():
 # UPLOADING A TXT FILE TO DOCUMENTS FILE
 # Harus di-run dari directory main.py, aka bukan Open With > Python!
 
-UPLOAD_FOLDER = '../documents'
+UPLOAD_FOLDER = 'upload'
 ALLOWED_EXTENSIONS = ['txt']
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -156,16 +161,14 @@ def upload():
          return redirect(request.url)
    return render_template('upload.html')
 
-@app.route('/result/<q>', methods = ['POST', 'GET'])
-def result():
-   if request.method == "POST":
-      query = request.form['query']
-      query2 = stem(query)
-      query2 = remove_stop_word(query)
-      query3 = query2.rsplit(" ")
-      tabelsim = tabel_similarity(query3) # ini tabel yang masih ada nilai sim nya di baris terakhir
-      tabeldisplay = tabelhasil(tabelsim) # ini tabel yang sudah tinggal ditampilkan
-      return redirect(url_for('result', q = query))
+@app.route('/result/<q>')
+def result(q):
+   query2 = stem(q)
+   query2 = remove_stop_word(q)
+   query3 = query2.rsplit(" ")
+   tabelsim = tabel_similarity(query3) # ini tabel yang masih ada nilai sim nya di baris terakhir
+   tabeldisplay = tabelhasil(tabelsim) # ini tabel yang sudah tinggal ditampilkan
+   return render_template('result.html', result = tabeldisplay, count = (banyak_dokumen + 2))
 
 if __name__ == '__main__':
    # I added this for 'flash' function, not sure what it's supposed to do.
