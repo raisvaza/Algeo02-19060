@@ -153,9 +153,6 @@ def upload():
 
          textfile.save(os.path.join(address, textfile.filename))
          flash('File saved')
-
-         path = "documents/News_txt.txt"
-         all_files = os.listdir(path)
          return redirect(request.url)
    return render_template('upload.html')
 
