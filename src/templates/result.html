@@ -25,52 +25,34 @@
 
     <!--Searchbox-->
     <div class="search-box">
-        <form action = "/" method = "POST">
-            <input type="text" name="query" placeholder="Type something..."/>
-            <input type="submit" value="Go!" style="width:15%; min-width: 50px; margin: 20px 0px" />
-        </form>
+        <h2 style="margin-top: 30px">Search Results</h2>
+        <p>Displaying results according to the highest sim.<br>Click Search to input a new query.</p>
     </div>
 
     <!--Content-->
     <div class="content-wrapper">
-        <div class="result-object">
-            <h2>Title of Number 1 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
-        <div class="result-object">
-            <h2>Title of Number 2 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
-        <div class="result-object">
-            <h2>Title of Number 3 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
-        <div class="result-object">
-            <h2>Title of Number 4 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
-        <div class="result-object">
-            <h2>Title of Number 5 Sim</h2>
-            <h3>9999 words | Similarity: 100%</h3>
-            <p>Lorem ipsum dolor sit amet adispicing elit...</p>
-        </div>
-    </div>
 
-    <!--Table-->
-    <div class="content-wrapper">
-        <table>
-            {% for row in result %}
-                <tr>
-                {% for elem in row %}
-                    <td> {{ elem }} </td>
+        <!--Results-->
+        {% for row in isi %}
+            <div class="result-object">        
+                <a href="/uploads/{{row[0]}}"><h2>{{row[1]}}</h2></a>
+                <h3>{{row[3]}} words | Similarity: {{row[4]}}</h3>
+                <p>{{row[5]}}</p>
+            </div>
+        {% endfor %}
+
+        <!--Table-->
+        <div class="table-wrapper">
+            <table>
+                {% for row in result %}
+                    <tr>
+                    {% for elem in row %}
+                        <td> {{ elem }} </td>
+                    {% endfor %}
+                    </tr>
                 {% endfor %}
-                </tr>
-            {% endfor %}
-         </table>
+            </table>
+        </div>
     </div>
     
 </body>

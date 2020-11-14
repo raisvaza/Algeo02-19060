@@ -251,3 +251,51 @@ button:hover {
     height: 250px;
     margin: -20px;
 }
+
+.table-wrapper {
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    overflow: auto;
+    margin: auto;
+    padding-top: 10px;
+}
+
+/* Hide scrollbars */
+
+.table-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.table-wrapper {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+/* Table Properties */
+
+table {
+    text-align: center;
+    color: #030027;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: lighter;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+tr, td {
+    padding: 10px;
+    min-width: 60px;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+tr:first-child {
+    background-color: #E26D5C;
+    font-family: "Cabin";
+    color: #FFFFFF;
+}
