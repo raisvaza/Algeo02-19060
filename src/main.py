@@ -37,7 +37,7 @@ def tabel_similarity(query):
    tabel[0][0] = 'Term'
    tabel[0][1] = 'Query'
    for j in range (2, banyak_dokumen + 2):
-      tabel[0][j] = 'D' + str(j - 1)
+      tabel[0][j] = 'D' + str(j - 1)                   # URGENT INI BAKAL DISESUAIKAN SAMA DATABASE
 
    # memasukkan frekuensi kemunculan term di query ke tabel
    term_terpakai = 0
@@ -57,7 +57,7 @@ def tabel_similarity(query):
          term_terpakai += 1
 
    # memasukkan frekuensi kemunculan term di setiap dokumen ke tabel
-   
+
 
    # pengisian baris terakhir (baris sim)
    for j in range (banyak_dokumen + 2):
