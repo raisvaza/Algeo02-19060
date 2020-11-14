@@ -3,9 +3,20 @@ from flask import Flask, render_template, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
+# THIS IS THE NORMAL '/'
+
 @app.route('/')
 def home():
    return render_template('main.html')
+
+# THIS IS WHEN '/' SENDS POST METHOD
+
+@app.route('/', methods=['POST'])
+def home_post():
+   if request.method == "POST":
+      query = request.form['query']
+      # Redirects to /result/<query>
+      return redirect(url_for('result', q = query))
 
 @app.route('/about/')
 def about():
@@ -60,13 +71,15 @@ def upload():
          return redirect(request.url)
    return render_template('upload.html')
 
-@app.route('/result/', methods = ['POST', 'GET'])
+@app.route('/result/<q>', methods = ['POST', 'GET'])
 def result():
-   if request.method == 'POST':
-      result = request.form['text']
-      return render_template("result.html",result = result)
+   
+   if request.method == "POST":
+      query = request.form['query']
+      return redirect(url_for('result', q = query))
 
 if __name__ == '__main__':
    # I added this for 'flash' function, not sure what it's supposed to do.
+   # Anyways, the flash function did not work so fml right? :)
    app.secret_key = os.urandom(24)
    app.run(debug = True)
