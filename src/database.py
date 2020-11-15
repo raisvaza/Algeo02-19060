@@ -44,4 +44,6 @@ for filename in os.listdir(direktoriDokumen):
         
         isiJumlahKataDokumen(judul,isiArtikel)
 
+        f.close()
+
 database = [namaDokumen, judulDokumen, kontenDokumen, paragrafPertamaDokumen, jumlahKataDokumen]

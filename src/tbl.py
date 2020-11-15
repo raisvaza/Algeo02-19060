@@ -1,5 +1,6 @@
 import math
-import cleaning
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
 # database = [['dokumen1.txt','dokumen2.txt'], ['Judul Dokumen 1','Judul Dokumen 2'], ['Judul Dokumen 1 Ini adalah kalimat pertama dokumen 1. Ini adalah kalimat kedua dokumen 1.','Judul Dokumen 1 Ini adalah kalimat pertama dokumen 2. Ini adalah kalimat kedua dokumen 2.'], ['Ini adalah kalimat pertama dokumen 1.','Ini adalah kalimat pertama dokumen 2.'], [42, 69]]
 # INI ADALAH CONTOH
@@ -12,7 +13,9 @@ def tabelVektor(database):
     # banyak_term = 15
     # INI ADALAH CONTOH
     for z in range (banyak_dokumen):
-        banyak_term += len(removeStopWord(stem(database[2][z])).split)
+        term1 = stem(database[2][z])
+        term2 = removeStopWord(term1)
+        banyak_term += len(term2.split())
     tabel = [[0 for j in range (banyak_dokumen + 1)] for i in range (banyak_term + 1)]
 
     # pengisian baris pertama termasuk kode (nama) dokumen
@@ -213,6 +216,19 @@ def compactTable(table):
         i += 1
     return hasil
 
+def stem(artikel):
+   # Bikin stemmer
+   factory = StemmerFactory()
+   stemmer = factory.create_stemmer()
+   sentence = artikel
+   output = stemmer.stem(sentence)
+   return output
 
+def removeStopWord(artikel):
+   # Penghapusan stopwords
+   factory = StopWordRemoverFactory()
+   stopword = factory.create_stop_word_remover()
+   removed_artikel = stopword.remove(artikel)
+   return removed_artikel
 
 

@@ -2,8 +2,7 @@ import os
 import tbl, database
 from flask import Flask, render_template, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
-from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+
 app = Flask(__name__)
 
 # THIS IS THE NORMAL '/'
@@ -76,7 +75,7 @@ def upload():
 
 @app.route('/result/<q>')
 def result(q):
-   tabelvektor = tbl.tabelVektor(database) # ini tabel semua term dari semua dokumen
+   tabelvektor = tbl.tabelVektor(database.database) # ini tabel semua term dari semua dokumen
    tabelsim = tbl.tabelSim(tabelvektor, q) # ini tabel yang masih ada nilai sim nya di baris terakhir
    tabeldisplay = tbl.tabelDisplay(tabelsim) # ini tabel yang akan ditampilkan
    tabelisi = tbl.transpose(database, tabelsim) # ini tabel yang dipakai untuk menampilkan data txt
