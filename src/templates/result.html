@@ -37,7 +37,7 @@
         {% for row in isi %}
             <div class="result-object">
                 <a href="{{ url_for('static', filename=row[0]) }}"><h2>{{row[1]}}</h2></a>
-                <h3>{{row[2]}} words | Similarity: {{row[3]}}</h3>
+                <h3>{{row[2]}} words | Similarity: {{ "%.2f"|format(row[3]*100) }}%</h3>
                 <p>{{row[4]}}</p>
             </div>
         {% endfor %}

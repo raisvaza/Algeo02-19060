@@ -152,10 +152,10 @@ def tabelSim(tab_data, query):
 
 # return tabel untuk ditampilkan di hasil search
 def tabelDisplay(tabel):
-    hasil = sortBySim(tabel)
+    temp = sortBySim(tabel)
     hasil = [[0 for j in range (len(tabel[0]))] for i in range (len(tabel) - 1)]
     for i in range (len(hasil)):
-        hasil[i] = tabel[i]
+        hasil[i] = temp[i]
     for j in range (2, len(hasil[0])):
         hasil[0][j] = "D" + str(j - 1)
     return hasil
@@ -174,10 +174,13 @@ def dataByQuery(database, tabelsim):
     temp[2] = database[4]
     temp[4] = database[3]
 
+    print(tabelsim[indeks_sim])
     # Copying sim data
     for i in range(len(database[0])):
         temp[3][i] = tabelsim[indeks_sim][i+2]
     
+    print(temp)
+
     # Sort by sim
     temp = sortQueryTable(temp)
 
@@ -230,7 +233,11 @@ def transpose(database, tabel):
 
 
 # Mengurutkan tabel berdasarkan indeks simnya, secara descending
-def sortBySim(table):
+def sortBySim(before):
+    table = [[0 for j in range(len(before[0]))] for i in range (len(before))]
+    for i in range(len(table)):
+        for j in range(len(table[0])):
+            table[i][j] = before[i][j]
     indeks_sim = len(table) - 1
     jumlah_dokumen = len(table[indeks_sim])
     for i in range(2, jumlah_dokumen):
@@ -289,5 +296,3 @@ def hapusHeader(tabel):
     for i in range (1, len(tabel)):
         hasil[i - 1] = tabel[i]
     return hasil
-
-
