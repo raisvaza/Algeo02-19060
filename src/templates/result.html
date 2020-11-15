@@ -35,7 +35,7 @@
         <!--Results-->
         {% for row in isi %}
             <div class="result-object">        
-                <a href="/uploads/{{row[0]}}"><h2>{{row[1]}}</h2></a>
+                <a href="../test/{{row[0]}}"><h2>{{row[1]}}</h2></a>
                 <h3>{{row[3]}} words | Similarity: {{row[4]}}</h3>
                 <p>{{row[5]}}</p>
             </div>
@@ -44,7 +44,7 @@
         <!--Table-->
         <div class="table-wrapper">
             <table>
-                {% for row in result %}
+                {% for row in tabel %}
                     <tr>
                     {% for elem in row %}
                         <td> {{ elem }} </td>

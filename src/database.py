@@ -6,7 +6,7 @@ kontenDokumen = []
 paragrafPertamaDokumen = []
 jumlahKataDokumen = []
 
-direktoriDokumen = "./test"
+direktoriDokumen = "../test"
 
 def isiNamaDokumen(dokumen):
 # Memasukkan nama dokumen ke array namaDokumen
