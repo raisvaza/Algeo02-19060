@@ -88,7 +88,9 @@ def result(q):
 def terms():
    data = database.database
    tabelTerms = tbl.tabelVektor(data) # ini tabel semua term dari semua dokumen
-   return render_template('terms.html', terms = tabelTerms)
+   tabelJudul = tbl.getNamaJudul(tabelTerms)
+   tabelTerms = tbl.hapusHeader(tabelTerms)
+   return render_template('terms.html', judul = tabelJudul, terms = tabelTerms)
 
 if __name__ == '__main__':
    # I added this for 'flash' function, not sure what it's supposed to do.
