@@ -81,6 +81,11 @@ def result(q):
    tabelisi = tbl.transpose(database, tabelsim) # ini tabel yang dipakai untuk menampilkan data txt
    return render_template('result.html', tabel = tabeldisplay, isi = tabelisi)
 
+@app.route('/terms/')
+def terms():
+   tabelTerms = [["Terms","D1","D2","D3"],["makan",1,2,3],["minum",1,2,3],["sapi",1,2,3]] # !!!! CHANGE LATER !!!!
+   return render_template('terms.html', terms = tabelTerms)
+
 if __name__ == '__main__':
    # I added this for 'flash' function, not sure what it's supposed to do.
    # Anyways, the flash function did not work so fml right? :)

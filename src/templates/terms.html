@@ -3,7 +3,7 @@
 <head>
 
     <title>
-        Simple Search Engine: Search
+        Simple Search Engine: Terms
     </title>
 
     <link rel="stylesheet" href="../static/css/styles.css"> 
@@ -20,8 +20,8 @@
     <div class="navigation-bar">
         <a href="about/"><button>About</button></a>
         <a href="upload/"><button>Upload</button></a>
-        <a href=""><button>Search</button></a>
-        <a href="terms/"><button>Terms</button></a>
+        <a href="/"><button>Search</button></a>
+        <a href=""><button>Terms</button></a>
     </div>
 
     <!--Searchbox-->
@@ -34,18 +34,12 @@
     <div class="content-wrapper">
 
         <!--Results-->
-        {% for row in isi %}
-            <div class="result-object">        
-                <a href="../test/{{row[0]}}"><h2>{{row[1]}}</h2></a>
-                <h3>{{row[3]}} words | Similarity: {{row[4]}}</h3>
-                <p>{{row[5]}}</p>
-            </div>
-        {% endfor %}
+        <!--N/A-->
 
         <!--Table-->
         <div class="table-wrapper">
             <table>
-                {% for row in tabel %}
+                {% for row in terms %}
                     <tr>
                     {% for elem in row %}
                         <td> {{ elem }} </td>
