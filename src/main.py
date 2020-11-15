@@ -88,7 +88,7 @@ def result(q):
 def terms():
    data = database.database
    tabelTerms = tbl.tabelVektor(data) # ini tabel semua term dari semua dokumen
-   tabelJudul = tbl.getNamaJudul(tabelTerms)
+   tabelJudul = tbl.getNamaJudul(data)
    tabelTerms = tbl.hapusHeader(tabelTerms)
    return render_template('terms.html', judul = tabelJudul, terms = tabelTerms)
 

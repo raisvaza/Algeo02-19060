@@ -39,15 +39,14 @@
         <!--Table-->
         <div class="table-wrapper">
             <table>
-                {% for row in judul %}
                 <tr>
+                    <td>Term</td>
+                    {% for row in judul %}
                     <td>
-                        <div class="tooltip">{{ row[0] }}
-                            <span class="tooltiptext">{{ row[1] }}}</span>
-                        </div>
+                        <div class="tooltip" title="{{ row[1] }}">{{ row[0] }}</div>
                     </td>
+                    {% endfor %}
                 </tr>
-                {% endfor %}
                 {% for row in terms %}
                     <tr>
                     {% for elem in row %}
