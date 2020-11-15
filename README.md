@@ -1,5 +1,5 @@
 # Algeo02-19060
-A Simple Search Engine
+Simple Search Engine
 
 ## Table of contents
 * [General info](#general-info)
@@ -14,25 +14,26 @@ A Simple Search Engine
 ## General info
 This simple search engine program is a submission to the Linear Algebra and Geometry subject's assignment as an application of vector's dot product concept for information retrieval.
 ## Screenshots
-![Placeholder](src/img/placeholder.png)
+![Placeholder](src/img/shot.png)
 
 ## Technologies
 * Python - version 3.9.0
 * Flask - version 1.1.2
 * Werkzeug - version 1.0.1
+* Jinja2 - version 2.11.2
 
 ## Setup
-Run main.py (located in /src) in a Python environment.
+Run main.py (located in /src) in a Python environment and explore the website!
 
 ## Code Examples
 Input query to the search bar provided to run this part of the code:
 ```
 @app.route('/result/<q>')
 def result(q):
-   tabelvektor = tbl.tabelVektor(database) # ini tabel semua term dari semua dokumen
-   tabelsim = tbl.tabelSim(tabelvektor, q) # ini tabel yang masih ada nilai sim nya di baris terakhir
+   data = database.database
+   tabelsim = tblquery.tabelSimQuery(data, q) # ini tabel yang masih ada nilai sim nya di baris terakhir
    tabeldisplay = tbl.tabelDisplay(tabelsim) # ini tabel yang akan ditampilkan
-   tabelisi = tbl.transpose(database, tabelsim) # ini tabel yang dipakai untuk menampilkan data txt
+   tabelisi = tbl.dataByQuery(data, tabelsim) # ini tabel yang dipakai untuk menampilkan data file txt
    return render_template('result.html', tabel = tabeldisplay, isi = tabelisi)
 ```
 
@@ -40,16 +41,16 @@ def result(q):
 List of features ready:
 * Search feature
 * Upload documents feature
+* Term-Document frequency table
 
 To-do list:
-* Testing and debugging
-* See complete term-document frequency table
+* Pray for the best!
 
 ## Status
-Project is: _in progress_, _finished_, needs further testing.
+Project is: _finished_.
 
 ## Inspiration
-Project inspired by a tough college, based on a mindful of inspiration.
+Project inspired by a tough college, based on a mindful of inspirations.
 
 ## Contact
 Created by [@raisvaza](https://www.github.com/raisvaza) [@iedrania](https://www.github.com/iedrania) [@imanikarina](https://www.github.com/imanikarina), three students of ITB.
