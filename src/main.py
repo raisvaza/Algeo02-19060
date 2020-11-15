@@ -1,5 +1,5 @@
 import os
-import tbl, database
+import tbl, database, tblquery
 from flask import Flask, render_template, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
 
@@ -76,8 +76,7 @@ def upload():
 @app.route('/result/<q>')
 def result(q):
    data = database.database
-   tabelvektor = tbl.tabelVektor(data) # ini tabel semua term dari semua dokumen
-   tabelsim = tbl.tabelSim(tabelvektor, q) # ini tabel yang masih ada nilai sim nya di baris terakhir
+   tabelsim = tblquery.tabelSimQuery(data, q) # ini tabel yang masih ada nilai sim nya di baris terakhir
    tabeldisplay = tbl.tabelDisplay(tabelsim) # ini tabel yang akan ditampilkan
    tabelisi = tbl.dataByQuery(data, tabelsim) # ini tabel yang dipakai untuk menampilkan data txt
    #tabelisi = [["judul1.txt","judul 1", 100,0.9,"Kalimat pertama dokumen"],["judul2.txt","judul 2", 100,0.9,"Kalimat pertama dokumen"],["judul3.txt","judul 3", 100,0.9,"Kalimat pertama dokumen"]]

@@ -289,3 +289,5 @@ def hapusHeader(tabel):
     for i in range (1, len(tabel)):
         hasil[i - 1] = tabel[i]
     return hasil
+
+
