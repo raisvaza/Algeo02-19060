@@ -14,35 +14,42 @@ A Simple Search Engine
 ## General info
 This simple search engine program is a submission to the Linear Algebra and Geometry subject's assignment as an application of vector's dot product concept for information retrieval.
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Placeholder](src/img/placeholder.png)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Python - version 3.9.0
+* Flask - version 1.1.2
+* Werkzeug - version 1.0.1
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+Run main.py (located in /src) in a Python environment.
 
 ## Code Examples
-Show examples of usage:
-`put-your-code-here`
+Input query to the search bar provided to run this part of the code:
+```
+@app.route('/result/<q>')
+def result(q):
+   tabelvektor = tbl.tabelVektor(database) # ini tabel semua term dari semua dokumen
+   tabelsim = tbl.tabelSim(tabelvektor, q) # ini tabel yang masih ada nilai sim nya di baris terakhir
+   tabeldisplay = tbl.tabelDisplay(tabelsim) # ini tabel yang akan ditampilkan
+   tabelisi = tbl.transpose(database, tabelsim) # ini tabel yang dipakai untuk menampilkan data txt
+   return render_template('result.html', tabel = tabeldisplay, isi = tabelisi)
+```
 
 ## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+List of features ready:
+* Search feature
+* Upload documents feature
 
 To-do list:
-* Beresin 
-* Wow improvement to be done 2
+* Testing and debugging
+* See complete term-document frequency table
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Project is: _in progress_, _finished_, needs further testing.
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+Project inspired by a tough college, based on a mindful of inspiration.
 
 ## Contact
-Created by [@](https://www.flynerd.pl/) - feel free to contact me!
+Created by [@](https://www.flynerd.pl/) three students of ITB.
