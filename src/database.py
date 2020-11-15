@@ -6,7 +6,7 @@ kontenDokumen = []
 paragrafPertamaDokumen = []
 jumlahKataDokumen = []
 
-direktoriDokumen = "../test"
+direktoriDokumen = "static"
 
 def isiKontenDokumen(dokumen):
 # Memasukkan judul dokumen ke array kontenDokumen
@@ -26,21 +26,20 @@ for filename in os.listdir(direktoriDokumen):
         namaDokumen.append(filename)
 
         f = open(direktoriDokumen + "/" + filename, "r")
-
         judul = f.readline()
         judulDokumen.append(judul)
-
-        isiArtikel = f.readline()
-        isiArtikel = f.readlines()
-        isiKontenDokumen(isiArtikel)
-
         f.close()
+
         f = open(direktoriDokumen + "/" + filename, "r")
         judul = f.readline()
         pertama = f.readline()
         pertama = f.readline()
-
         paragrafPertamaDokumen.append(pertama)
+        f.close()
+
+        f = open(direktoriDokumen + "/" + filename, "r")
+        isiArtikel = f.readlines()
+        isiKontenDokumen(isiArtikel)
         
         isiJumlahKataDokumen(judul,isiArtikel)
 

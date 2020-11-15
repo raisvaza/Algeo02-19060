@@ -47,6 +47,7 @@ def tabelVektor(database):
                 tabel[term_terpakai + 1][z + 1] += 1
                 term_terpakai += 1
 
+        hasil = []
         hasil = compactTable(tabel)
 
     return hasil
@@ -262,18 +263,31 @@ def compactTable(table):
     return hasil
 
 def stem(artikel):
-   # Bikin stemmer
-   factory = StemmerFactory()
-   stemmer = factory.create_stemmer()
-   sentence = artikel
-   output = stemmer.stem(sentence)
-   return output
+    # Bikin stemmer
+    factory = StemmerFactory()
+    stemmer = factory.create_stemmer()
+    sentence = artikel
+    output = stemmer.stem(sentence)
+    return output
 
 def removeStopWord(artikel):
-   # Penghapusan stopwords
-   factory = StopWordRemoverFactory()
-   stopword = factory.create_stop_word_remover()
-   removed_artikel = stopword.remove(artikel)
-   return removed_artikel
+    # Penghapusan stopwords
+    factory = StopWordRemoverFactory()
+    stopword = factory.create_stop_word_remover()
+    removed_artikel = stopword.remove(artikel)
+    return removed_artikel
+
+def getNamaJudul(database):
+    hasil = [["*" for j in range (2)] for i in range (len(database[0]))]
+    for i in range (len(hasil)):
+        hasil[i][0] = "D" + str(i + 1)
+        hasil[i][1] = database[0][i]
+    return hasil
+
+def hapusHeader(tabel):
+    hasil = [[0 for j in range (len(tabel[0]))] for i in range (len(tabel) - 1)]
+    for i in range (1, len(tabel)):
+        hasil[i - 1] = tabel[i]
+    return hasil
 
 

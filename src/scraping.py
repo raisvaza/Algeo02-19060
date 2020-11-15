@@ -35,6 +35,6 @@ for paragraf in konten_bersih:
 artikel = judul + "\n\n" + temp
 
 # Penyimpanan artikel sebagai dokumen
-f = open("./documents/" + nama_file, "w+")
+f = open("/static/" + nama_file, "w+")
 f.write(artikel)
 f.close

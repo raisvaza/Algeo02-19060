@@ -18,10 +18,10 @@
     
     <!--Navbar-->
     <div class="navigation-bar">
-        <a href="about/"><button>About</button></a>
-        <a href="upload/"><button>Upload</button></a>
-        <a href=""><button>Search</button></a>
-        <a href="terms/"><button>Terms</button></a>
+        <a href="../about/"><button>About</button></a>
+        <a href="../upload/"><button>Upload</button></a>
+        <a href="../"><button>Search</button></a>
+        <a href="../terms/"><button>Terms</button></a>
     </div>
 
     <!--Searchbox-->
@@ -35,8 +35,8 @@
 
         <!--Results-->
         {% for row in isi %}
-            <div class="result-object">        
-                <a href="../test/{{row[0]}}"><h2>{{row[1]}}</h2></a>
+            <div class="result-object">
+                <a href="{{ url_for('static', filename=row[0]) }}"><h2>{{row[1]}}</h2></a>
                 <h3>{{row[2]}} words | Similarity: {{row[3]}}</h3>
                 <p>{{row[4]}}</p>
             </div>

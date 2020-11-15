@@ -27,7 +27,7 @@ def about():
 # UPLOADING A TXT FILE TO DOCUMENTS FILE
 # Harus di-run dari directory main.py, aka bukan Open With > Python!
 
-UPLOAD_FOLDER = 'upload'
+UPLOAD_FOLDER = 'static'
 ALLOWED_EXTENSIONS = ['txt']
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
