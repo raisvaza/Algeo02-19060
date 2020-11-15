@@ -83,7 +83,7 @@ def result(q):
 
 @app.route('/terms/')
 def terms():
-   tabelTerms = [["Terms","D1","D2","D3"],["makan",1,2,3],["minum",1,2,3],["sapi",1,2,3]] # !!!! CHANGE LATER !!!!
+   tabelTerms = [["Terms","D1","D2","D3","D4","D5","D6","D7"],["makan",1,2,3,4,5,6,7],["minum",1,2,3,4,5,6,7],["sapi",1,2,3,4,5,6,7],["makan",1,2,3,4,5,6,7],["minum",1,2,3,4,5,6,7],["sapi",1,2,3,4,5,6,7]] # !!!! CHANGE LATER !!!!
    return render_template('terms.html', terms = tabelTerms)
 
 if __name__ == '__main__':
