@@ -27,7 +27,7 @@
     <!--Searchbox-->
     <div class="search-box">
         <h2 style="margin-top: 30px">Search Results</h2>
-        <p>Displaying results according to the highest sim.<br>Click Search to input a new query.</p>
+        <p>Displaying results according to the highest sim. Click Search to input a new query.</p>
     </div>
 
     <!--Content-->
@@ -37,8 +37,8 @@
         {% for row in isi %}
             <div class="result-object">        
                 <a href="../test/{{row[0]}}"><h2>{{row[1]}}</h2></a>
-                <h3>{{row[3]}} words | Similarity: {{row[4]}}</h3>
-                <p>{{row[5]}}</p>
+                <h3>{{row[2]}} words | Similarity: {{row[3]}}</h3>
+                <p>{{row[4]}}</p>
             </div>
         {% endfor %}
 

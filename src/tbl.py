@@ -47,7 +47,9 @@ def tabelVektor(database):
                 tabel[term_terpakai + 1][z + 1] += 1
                 term_terpakai += 1
 
-    return tabel
+        hasil = compactTable(tabel)
+
+    return hasil
 
 # tabel_vektor = [['Term', 'dokumen1.txt', 'dokumen2.txt'],['judul', 1, 1],['dokumen', 3, 3],['1', 3, 3],['ini', 2, 2],['adalah', 2, 2],['kalimat', 2, 2],['pertama', 1, 1],['kedua', 1, 1]]
 # INI ADALAH CONTOH
@@ -141,8 +143,6 @@ def tabelSim(tab_data, query):
             tabel[indeks][j] = 0
 
     hasil = compactTable(tabel)
-
-    hasil = sortBySim(hasil)
     
     return hasil
 
@@ -151,6 +151,7 @@ def tabelSim(tab_data, query):
 
 # return tabel untuk ditampilkan di hasil search
 def tabelDisplay(tabel):
+    hasil = sortBySim(tabel)
     hasil = [[0 for j in range (len(tabel[0]))] for i in range (len(tabel) - 1)]
     for i in range (len(hasil)):
         hasil[i] = tabel[i]
@@ -161,6 +162,48 @@ def tabelDisplay(tabel):
 # ['dokumen1.txt', 'Judul Dokumen 1', 42, 0.7717436331412897, 'Ini adalah kalimat pertama dokumen 1.']
 # ['dokumen2.txt', 'Judul Dokumen 2', 69, 0.7717436331412897, 'Ini adalah kalimat pertama dokumen 2.']
 # INI ADALAH CONTOH
+
+def dataByQuery(database, tabelsim):
+    indeks_sim = len(tabelsim) - 1
+    temp = [[0 for j in range (len(database[0]))] for i in range (5)]
+
+    # Copying data from database
+    temp[0] = database[0]
+    temp[1] = database[1]
+    temp[2] = database[4]
+    temp[4] = database[3]
+
+    # Copying sim data
+    for i in range(len(database[0])):
+        temp[3][i] = tabelsim[indeks_sim][i+2]
+    
+    # Sort by sim
+    temp = sortQueryTable(temp)
+
+    # Transpose for printing
+    hasil = transpose(temp)
+    return hasil
+
+def transpose(table):
+    temp = [[0 for j in range(len(table))] for i in range (len(table[0]))]
+    for i in range(len(temp)):
+        for j in range(len(temp[0])):
+            temp[i][j] = table[j][i]
+    return temp
+
+def sortQueryTable(table):
+    indeks_sim = 3
+    jumlah_sorting = len(table[0])
+    for i in range(jumlah_sorting):
+        for j in range(i+1, jumlah_sorting):
+            if table[indeks_sim][j] > table[indeks_sim][i]:
+                for k in range(0, 5):
+                    temp = table[k][i]
+                    table[k][i] = table[k][j]
+                    table[k][j] = temp
+    return table
+
+'''
 
 # transpose tabel untuk ditampilkan di html
 def transpose(database, tabel):
@@ -181,6 +224,8 @@ def transpose(database, tabel):
                 hasil[i][4] = database[3][j]
             j += 1
     return hasil
+
+'''
 
 
 # Mengurutkan tabel berdasarkan indeks simnya, secara descending

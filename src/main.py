@@ -79,9 +79,9 @@ def result(q):
    tabelvektor = tbl.tabelVektor(data) # ini tabel semua term dari semua dokumen
    tabelsim = tbl.tabelSim(tabelvektor, q) # ini tabel yang masih ada nilai sim nya di baris terakhir
    tabeldisplay = tbl.tabelDisplay(tabelsim) # ini tabel yang akan ditampilkan
-   print(tabeldisplay)
-   tabelisi = tbl.transpose(data, tabelsim) # ini tabel yang dipakai untuk menampilkan data txt
-   print(tabelisi)
+   tabelisi = tbl.dataByQuery(data, tabelsim) # ini tabel yang dipakai untuk menampilkan data txt
+   #tabelisi = [["judul1.txt","judul 1", 100,0.9,"Kalimat pertama dokumen"],["judul2.txt","judul 2", 100,0.9,"Kalimat pertama dokumen"],["judul3.txt","judul 3", 100,0.9,"Kalimat pertama dokumen"]]
+   #tabeldisplay = [["Terms","Query","D1","D2","D3"],["makan",1,1,2,3],["minum",1,1,2,3],["sapi",2,1,2,3]]
    return render_template('result.html', tabel = tabeldisplay, isi = tabelisi)
 
 @app.route('/terms/')
