@@ -75,15 +75,19 @@ def upload():
 
 @app.route('/result/<q>')
 def result(q):
-   tabelvektor = tbl.tabelVektor(database.database) # ini tabel semua term dari semua dokumen
+   data = database.database
+   tabelvektor = tbl.tabelVektor(data) # ini tabel semua term dari semua dokumen
    tabelsim = tbl.tabelSim(tabelvektor, q) # ini tabel yang masih ada nilai sim nya di baris terakhir
    tabeldisplay = tbl.tabelDisplay(tabelsim) # ini tabel yang akan ditampilkan
-   tabelisi = tbl.transpose(database, tabelsim) # ini tabel yang dipakai untuk menampilkan data txt
+   print(tabeldisplay)
+   tabelisi = tbl.transpose(data, tabelsim) # ini tabel yang dipakai untuk menampilkan data txt
+   print(tabelisi)
    return render_template('result.html', tabel = tabeldisplay, isi = tabelisi)
 
 @app.route('/terms/')
 def terms():
-   tabelTerms = [["Terms","D1","D2","D3","D4","D5","D6","D7"],["makan",1,2,3,4,5,6,7],["minum",1,2,3,4,5,6,7],["sapi",1,2,3,4,5,6,7],["makan",1,2,3,4,5,6,7],["minum",1,2,3,4,5,6,7],["sapi",1,2,3,4,5,6,7]] # !!!! CHANGE LATER !!!!
+   data = database.database
+   tabelTerms = tbl.tabelVektor(data) # ini tabel semua term dari semua dokumen
    return render_template('terms.html', terms = tabelTerms)
 
 if __name__ == '__main__':
