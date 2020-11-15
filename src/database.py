@@ -9,7 +9,7 @@ jumlahKataDokumen = []
 direktoriDokumen = "static"
 
 def isiKontenDokumen(dokumen):
-# Memasukkan judul dokumen ke array kontenDokumen
+# Memasukkan isi konten dokumen ke array kontenDokumen
     konten = ""
     for p in dokumen:
         if p != judul:
@@ -17,7 +17,7 @@ def isiKontenDokumen(dokumen):
     kontenDokumen.append(konten)
 
 def isiJumlahKataDokumen(judulDokumen,konten):
-# Memasukkan judul dokumen ke array jumlahKataDokumen
+# Memasukkan jumlah kata dokumen ke array jumlahKataDokumen
     jumlahKata = len(judulDokumen) + len(konten)
     jumlahKataDokumen.append(jumlahKata)
 

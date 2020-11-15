@@ -52,4 +52,4 @@ Project is: _in progress_, _finished_, needs further testing.
 Project inspired by a tough college, based on a mindful of inspiration.
 
 ## Contact
-Created by [@](https://www.flynerd.pl/) three students of ITB.
+Created by [@raisvaza](https://www.github.com/raisvaza) [@iedrania](https://www.github.com/iedrania) [@imanikarina](https://www.github.com/imanikarina), three students of ITB.
