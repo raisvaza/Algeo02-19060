@@ -7,6 +7,8 @@
     - terra-cotta: #e26d5cff;
 */
 
+/* FONTS */
+
 @font-face {
     font-family: "Montserrat";
     src: url("Fonts/Montserrat-Regular.ttf");
@@ -27,6 +29,8 @@
     src: url("Fonts/Tahu!.ttf");
 }
 
+/* GENERAL */
+
 * {
     padding: 0;
     margin: 0;
@@ -36,6 +40,8 @@ body {
     background-color: #F2EFEA;
     width: 100%;
 }
+
+/* STYLES */
 
 h1 {
     color: #FFFFFF;
@@ -66,6 +72,8 @@ p {
     font-weight: lighter;
     margin-bottom: 10px;
 }
+
+/* CONTENTS */
 
 .title-bar {
     background-color: #5C9EAD;
@@ -168,6 +176,8 @@ input[type=file]::file-selector-button:hover {
     margin: auto;
 }
 
+/* Form Utilities */
+
 .search-box input[type=text] {
     padding: 8px;
     border: none;
@@ -199,11 +209,15 @@ input[type=file]::file-selector-button:hover {
     border: 2px solid #902D41;
 }
 
+/* Cont'd */
+
 .result-object {
     text-align: left;
     margin-bottom: 25px;
     width: 100%;
 }
+
+/* Button */
 
 button {
     color: #FFFFFF;
@@ -229,6 +243,8 @@ button:hover {
     height: 40px;
     border: 0px;
 }
+
+/* IMAGE-RELATED */
 
 .profile {
     width: 200px;
@@ -273,7 +289,7 @@ button:hover {
 }
 
 
-/* Table Properties */
+/* TABLES */
 
 table {
     text-align: center;
@@ -300,7 +316,7 @@ tr:first-child {
     color: #FFFFFF;
 }
 
-/* Tooltip */
+/* TOOLTIP */
 
 .tooltip {
     position: relative;

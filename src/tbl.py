@@ -189,6 +189,7 @@ def dataByQuery(database, tabelsim):
     return hasil
 
 def transpose(table):
+    # Transpose tabel biasa
     temp = [[0 for j in range(len(table))] for i in range (len(table[0]))]
     for i in range(len(temp)):
         for j in range(len(temp[0])):
@@ -198,6 +199,7 @@ def transpose(table):
 def sortQueryTable(table):
     indeks_sim = 3
     jumlah_sorting = len(table[0])
+    # Metode sorting diri sendiri
     for i in range(jumlah_sorting):
         for j in range(i+1, jumlah_sorting):
             if table[indeks_sim][j] > table[indeks_sim][i]:
@@ -235,11 +237,15 @@ def transpose(database, tabel):
 # Mengurutkan tabel berdasarkan indeks simnya, secara descending
 def sortBySim(before):
     table = [[0 for j in range(len(before[0]))] for i in range (len(before))]
+    # Copy before ke table
     for i in range(len(table)):
         for j in range(len(table[0])):
             table[i][j] = before[i][j]
+    
     indeks_sim = len(table) - 1
     jumlah_dokumen = len(table[indeks_sim])
+
+    # Metode sorting diri sendiri
     for i in range(2, jumlah_dokumen):
         for j in range(i+1, jumlah_dokumen):
             if table[indeks_sim][j] > table[indeks_sim][i]:
@@ -285,6 +291,7 @@ def removeStopWord(artikel):
     return removed_artikel
 
 def getNamaJudul(database):
+    # Membuat array D1, D2, D3, dst dan judul dokumen bersangkutan
     hasil = [["*" for j in range (2)] for i in range (len(database[0]))]
     for i in range (len(hasil)):
         hasil[i][0] = "D" + str(i + 1)
@@ -292,6 +299,7 @@ def getNamaJudul(database):
     return hasil
 
 def hapusHeader(tabel):
+    # Menghapus baris pertama tabel
     hasil = [[0 for j in range (len(tabel[0]))] for i in range (len(tabel) - 1)]
     for i in range (1, len(tabel)):
         hasil[i - 1] = tabel[i]
