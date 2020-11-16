@@ -14,7 +14,7 @@ Simple Search Engine
 ## General info
 This simple search engine program is a submission to the Linear Algebra and Geometry subject's assignment as an application of vector's dot product concept for information retrieval.
 ## Screenshots
-![Placeholder](src/img/shot.png)
+![Screenshot](src/img/shot.png)
 
 ## Technologies
 * Python - version 3.9.0
@@ -23,6 +23,11 @@ This simple search engine program is a submission to the Linear Algebra and Geom
 * Jinja2 - version 2.11.2
 
 ## Setup
+Make sure the computer has pip, Flask, and Sastrawi installed. pip is already installed if you are using Python 2 >=2.7.9 or Python 3 >=3.4 downloaded from python.org or if you are working in a Virtual Environment created by virtualenv or venv. To install the others, run these commands in terminal/command prompt:
+```
+pip install Flask
+pip install Sastrawi
+```
 Run main.py (located in /src) in a Python environment and explore the website!
 
 ## Code Examples
