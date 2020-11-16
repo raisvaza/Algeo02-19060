@@ -14,7 +14,7 @@ Simple Search Engine
 ## General info
 This simple search engine program is a submission to the Linear Algebra and Geometry subject's assignment as an application of vector's dot product concept for information retrieval.
 ## Screenshots
-![Screenshot](src/img/shot.png)
+![Screenshot](src/img/shot.jpg)
 
 ## Technologies
 * Python - version 3.9.0
