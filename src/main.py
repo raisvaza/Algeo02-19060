@@ -70,6 +70,7 @@ def upload():
 
          textfile.save(os.path.join(address, textfile.filename))
          flash('File saved')
+         database.newFileIn(UPLOAD_FOLDER, textfile.filename) # TAMBAH DATA DI DATABASE
          return redirect(request.url)
    return render_template('upload.html')
 

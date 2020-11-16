@@ -1,0 +1,23 @@
+Ini bagian dari flask halamannya:
+return render_template('result.html', isi = tabel)
+
+
+Ini punya Vaza:
+[NamaDokumen,JudulDokumen,IsiDokumen,KalimatPertama,JumlahKata] v
+
+Ini yang dibutuhin:
+[isinya ada query]
+[isinya ada sim]
+[NamaDokumen,JudulDokumen,JumlahKata,Sim (terurut),KalimatPertama]
+
+Ini hasil transpose:
+[[NamaDokumen,JudulDokumen,JumlahKata,Sim (terurut),KalimatPertama],[...], ...]
+
+
+
+to do:
+[v] bikin tabel semua term di semua dokumen
+[x] bikin fungsi yang bisa misahin semua term jadi yang term query aja
+[v] bikin fungsi compact tab
+[x] ubah database term query + database dokumen jadi database iterasi (utk print di html) --> urutin sim, extract info database dokumen sesuai key, transpose
+
