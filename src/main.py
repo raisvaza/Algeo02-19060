@@ -57,19 +57,19 @@ def upload():
 
          # File name is Empty
          if textfile.filename == "":
-            flash('No selected file.')
+            print('No selected file.')
             return redirect(request.url)
 
          # File extension is not allowed
          if not isAllowed(textfile.filename):
-            flash('Not a .txt file.')
+            print('Not a .txt file.')
             return redirect(request.url)
 
          # Get absolute address
          address = os.path.abspath(app.config['UPLOAD_FOLDER'])
 
          textfile.save(os.path.join(address, textfile.filename))
-         flash('File saved')
+         print('File saved')
          database.newFileIn(UPLOAD_FOLDER, textfile.filename) # TAMBAH DATA DI DATABASE
          return redirect(request.url)
    return render_template('upload.html')
@@ -97,6 +97,5 @@ def terms():
 
 if __name__ == '__main__':
    # I added this for 'flash' function, not sure what it's supposed to do.
-   # Anyways, the flash function did not work so fml right? :)
-   app.secret_key = os.urandom(24)
+   # app.secret_key = os.urandom(24)
    app.run(debug = True)

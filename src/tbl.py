@@ -64,7 +64,7 @@ def tabelSim(tab_data, query):
     term_query = query.rsplit(" ")
 
     # deklarasi
-    term_terpakai = 0
+    # term_terpakai = 0
     banyak_term = len(term_query)
     tabel = [[0 for j in range (len(tab_data[0]) + 1)] for i in range (banyak_term + 2)]
 
@@ -174,12 +174,9 @@ def dataByQuery(database, tabelsim):
     temp[2] = database[4]
     temp[4] = database[3]
 
-    print(tabelsim[indeks_sim])
     # Copying sim data
     for i in range(len(database[0])):
         temp[3][i] = tabelsim[indeks_sim][i+2]
-    
-    print(temp)
 
     # Sort by sim
     temp = sortQueryTable(temp)
@@ -196,9 +193,16 @@ def transpose(table):
             temp[i][j] = table[j][i]
     return temp
 
-def sortQueryTable(table):
+def sortQueryTable(before):
+    table = [[0 for j in range(len(before[0]))] for i in range (len(before))]
+    # Copy before ke table
+    for i in range(len(table)):
+        for j in range(len(table[0])):
+            table[i][j] = before[i][j]
+
     indeks_sim = 3
     jumlah_sorting = len(table[0])
+
     # Metode sorting diri sendiri
     for i in range(jumlah_sorting):
         for j in range(i+1, jumlah_sorting):
